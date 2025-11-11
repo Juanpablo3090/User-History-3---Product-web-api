@@ -1,0 +1,39 @@
+
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: webproductos_db
+      MYSQL_USER: webuser
+      MYSQL_PASSWORD: webpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
+  
+  
+  api:
+    build:
+      context: .
+      dockerfile: webProductos.Api/Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=server=db;port=3306;database=webproductos_db;user=webuser;password=webpass
+      - JwtSettings__Secret=VerySecretKeyForDevShouldBeLong
+      - JwtSettings__Issuer=webproductos
+      - JwtSettings__Audience=webclientes
+
+
+volumes:
+  dbdata:
