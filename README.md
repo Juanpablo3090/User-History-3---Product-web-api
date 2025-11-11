@@ -1,22 +1,29 @@
 
-# webProductos - Simulacro HU3
+#webProducts - HU3 
 
-Solución scaffold para la HU: API REST en .NET con arquitectura en capas (Api, Application, Domain, Infrastructure).
+HU Scaffold Solution: REST API in .NET with a layered architecture (API, Application, Domain, Infrastructure).
 
-**Incluye**:
-- 4 proyectos: webProductos.Api, webProductos.Application, webProductos.Domain, webProductos.Infrastructure
-- Proyecto de pruebas: webProductos.Application.Tests (xUnit)
-- Dockerfile y docker-compose.yml (API + MySQL + Adminer)
-- EF Core DbContext y migraciones placeholder
+**Includes**:
+- 4 projects: webProducts.Api, webProducts.Application, webProducts.Domain, webProducts.Infrastructure
+- Test project: webProducts.Application.Tests (xUnit)
+- Dockerfile and docker-compose.yml (API + MySQL + Admin)
+- EF Core DbContext placeholder and migrations
 - Postman collection placeholder
 
-> Este es un scaffold funcional que debe restaurarse y compilarse con .NET 7/8 en local. Ejecuta `dotnet restore` y `dotnet build`.
+> This is a working scaffold that needs to be restored and compiled with .NET 7/8 locally. Run `dotnet reset` and `dotnet build`.
 
-Instrucciones rápidas:
-1. Instalar .NET SDK (7+).
-2. Desde la raíz del repo: `dotnet restore`, `dotnet build`.
-3. Levantar con Docker: `docker-compose up --build` (requiere Docker).
-4. Endpoint de autenticación:
-   - POST /api/auth/register
-   - POST /api/auth/login
+Quick Instructions:
+1. Install the .NET SDK (7+).
 
+2. From the repository root: `dotnet restore`, `dotnet build`.
+
+3. Start with Docker: `docker-compose up --build` (requires Docker).
+
+4. Authentication endpoint:
+
+- POST /api/auth/registration
+
+- POST /api/auth/login
+
+5. If you wanna use the api web via swagger, go to "http://localhost:5000/swagger/index.html"
+6. If you need to acess adminer just enter to "http://localhost:8081/"
