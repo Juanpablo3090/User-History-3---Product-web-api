@@ -1,0 +1,8 @@
+
+{
+  "info": { "name": "webProductos - SimulacroHU3", "_postman_id": "placeholder", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "Register", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n  \"username\": \"admin\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"admin123\",\n  \"role\": \"Admin\"\n}" }, "url": { "raw": "http://localhost:5000/api/auth/register" } } },
+    { "name": "Login", "request": { "method": "POST", "header": [], "body": { "mode": "raw", "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}" }, "url": { "raw": "http://localhost:5000/api/auth/login" } } }
+  ]
+}
